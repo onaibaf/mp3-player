@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body {
+            text-align: center;
+            background-color: #f3f3f3;
+            font-family: Arial, sans-serif;
+        }
+        .audio-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="audio-container">
+        <h3>🎧 Ascolta il Podcast</h3>
+        <audio id="player" controls>
+            <source src="https://docs.google.com/uc?export=download&id=1TNmix5hDUOqRRO0wlnxUXJ2y87nI83K8" type="audio/mpeg">
+            Il tuo browser non supporta l'elemento audio.
+        </audio>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player', {
+            controls: ['play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'download'],
+            settings: ['speed'],
+        });
+    </script>
+
+</body>
+</html>
